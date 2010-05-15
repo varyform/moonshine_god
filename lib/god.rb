@@ -32,7 +32,7 @@ module God
 
     exec 'restart_god',
         :command => 'stop god || true && start god',
-        :require => file('/etc/event.d/god'),
+        :require => file('/etc/init/god.conf'),
         :refreshonly => true
 
     logrotate '/var/log/god.log',
