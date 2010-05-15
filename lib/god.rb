@@ -26,7 +26,7 @@ module God
         :notify => exec('restart_god')
 
     # upstart- start god at boot, respawn when necessary
-    file '/etc/event.d/god',
+    file '/etc/init/god.conf',
         :content => File.read("#{File.dirname(__FILE__)}/../templates/god.upstart"),
         :notify => exec('restart_god')
 
